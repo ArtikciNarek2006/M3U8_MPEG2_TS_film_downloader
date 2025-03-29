@@ -3,7 +3,6 @@ import threading
 import time
 import urllib.request
 import urllib.parse
-from csv import excel
 
 from colorama import Fore
 from settings import MIN_LOG

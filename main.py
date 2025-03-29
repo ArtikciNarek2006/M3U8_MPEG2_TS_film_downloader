@@ -19,7 +19,9 @@ def gen_temp_and_video_paths(film_name="", m3u8_url=""):
     return pathlib.Path(temp), pathlib.Path(video)
 
 
-filmname, file_url = VIDEO_DATA[0]
-temp_dir, video_path = gen_temp_and_video_paths(filmname, file_url)
-print(f"temp_dir: {temp_dir}; video_path: {video_path};")
-download_video_from_m3u8(file_url, temp_dir, video_path)
+for filmname, file_url in VIDEO_DATA:
+    print(f"\n\n\n{filmname}")
+    temp_dir, video_path = gen_temp_and_video_paths(filmname, file_url)
+    print(f"{filmname} -- temp_dir: {temp_dir}; video_path: {video_path};")
+    download_video_from_m3u8(file_url, temp_dir, video_path)
+    print("\n\n\n")
